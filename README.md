@@ -2,4 +2,4 @@
 
 ### TO DO:
 
-* Edit each item ( [this example can be adapted](https://jsfiddle.net/mnahara/ypmmkapn/) )
+- [x] Edit each item ( [this example can be adapted](https://jsfiddle.net/mnahara/ypmmkapn/) ) (thanks [Paco](https://github.com/pacosegovia)!)
