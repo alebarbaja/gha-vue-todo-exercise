@@ -11,28 +11,37 @@
         <div id="app">
             <header>
                 <h1>To do list</h1>
-                <p>You have {{ taskList.length }} tasks.</p>
+                <p>You have {{ items.length }} tasks.</p>
             </header>
 
             <main>
-                <form @submit.prevent>
-                    <input type="text" v-model="taskItem" />
-                    <button @click="addItem">+</button>
-                </form>
+                <label for="add_item">Add task</label>
+                <input id="add_item" type="text" @keyup.enter="addItem" />
+                <!-- <button @click="addItem" type="submit">+</button> -->
 
                 <ul>
-                    <li v-for="(task, index) in taskList">
+                    <li v-for="(item, index) in items" @click="enableEdit(index)">
+                        <span v-if="! item.edit">{{ item.title }}</span>
                         <!-- <input
                             type="text"
-                            v-if="isEditing"
-                            :value="task"
-                            @keyup.enter="finishEditTask($event, index)"
+                            v-if="item.edit"
+                            v-model="item.title"
+                            @keyup.enter="disableEdit($event, index)"
+                            @blur="disableEdit(index)"
                         /> -->
-                        <span>{{ task }}</span>
+                        <input
+                            type="text"
+                            v-model="item.title"
+                            v-if="item.edit"
+                            ref='search'
+                            v-on:keyup.enter="disableEdit(index)"
+                            v-on:blur="disableEdit(index)">
                         <!-- <button @click="isEditing = !isEditing">Editar</button> -->
                         <button @click="removeItem(index)">Eliminar</button>
                     </li>
                 </ul>
+
+                <p class="error" v-if="isError">Este valor ya existe en la lista</p>
             </main>
 
             <pre>{{ $data }}</pre>
