@@ -2,4 +2,4 @@
 
 ### TO DO:
 
-* Edit each item
+* Edit each item ( [this example can be adapted](https://jsfiddle.net/mnahara/ypmmkapn/) )
