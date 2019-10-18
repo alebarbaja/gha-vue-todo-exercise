@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>VUE To-Do</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <header>
+                <h1>To do list</h1>
+                <p>You have {{ taskList.length }} tasks.</p>
+            </header>
+
+            <main>
+                <form @submit.prevent>
+                    <input type="text" v-model="taskItem" />
+                    <button @click="addItem">+</button>
+                </form>
+
+                <ul>
+                    <li v-for="(task, index) in taskList">
+                        <!-- <input
+                            type="text"
+                            v-if="isEditing"
+                            :value="task"
+                            @keyup.enter="finishEditTask($event, index)"
+                        /> -->
+                        <span>{{ task }}</span>
+                        <!-- <button @click="isEditing = !isEditing">Editar</button> -->
+                        <button @click="removeItem(index)">Eliminar</button>
+                    </li>
+                </ul>
+            </main>
+
+            <pre>{{ $data }}</pre>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
