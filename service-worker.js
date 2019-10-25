@@ -1,9 +1,8 @@
-var CACHE_NAME = 'vue-todo-v3';
+var CACHE_NAME = 'vue-todo-v4';
 var urlsToCache = [
-    '/',
-    '/index.html',
-    '/css/style.css',
-    '/js/main.js',
+    'index.html',
+    'css/style.css',
+    'js/main.js',
 ];
 
 self.addEventListener('install', function (event) {
@@ -46,7 +45,7 @@ self.addEventListener('fetch', function (event) {
 });
 
 self.addEventListener('activate', function (event) {
-    var cacheWhiteList = ['vue-todo-v3'];
+    var cacheWhiteList = ['vue-todo-v4'];
 
     event.waitUntil(
         caches.keys().then(function (cacheNames) {
