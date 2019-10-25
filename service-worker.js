@@ -1,8 +1,9 @@
-var CACHE_NAME = 'vue-todo-v1';
+var CACHE_NAME = 'vue-todo-v2';
 var urlsToCache = [
     '/',
+    '/index.html',
     '/css/style.css',
-    '/js/main.js'
+    '/js/main.js',
 ];
 
 self.addEventListener('install', function (event) {
