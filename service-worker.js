@@ -1,4 +1,4 @@
-var CACHE_NAME = 'vue-todo-v2';
+var CACHE_NAME = 'vue-todo-v3';
 var urlsToCache = [
     '/',
     '/index.html',
