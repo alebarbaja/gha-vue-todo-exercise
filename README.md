@@ -8,4 +8,4 @@
 - [ ] Add button to input add task
 - [ ] Improve navigation with keyboard
 - [ ] Bug: when navigate with keyboard and click un edit button, the input get focus and disappear
-- [ ] Make PWA
+- [x] Make PWA
