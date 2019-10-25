@@ -4,6 +4,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="VUE To-Do PWA">
+        <link rel="apple-touch-icon" href="/icons/vue-todo-192.png">
+        <meta name="description" content="A To do app made with Vue">
+        <meta name="theme-color" content="#f6ad55" />
+
+        <link rel="manifest" href="/manifest.json">
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <title>VUE To-Do</title>
@@ -44,5 +53,15 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="js/main.js"></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js')
+                        .then((reg) => {
+                            console.log('Service worker registered.', reg)
+                        });
+                });
+            }
+        </script>
     </body>
 </html>
