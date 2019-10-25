@@ -46,7 +46,7 @@ self.addEventListener('fetch', function (event) {
 });
 
 self.addEventListener('activate', function (event) {
-    var cacheWhiteList = ['vue-todo-v1'];
+    var cacheWhiteList = ['vue-todo-v3'];
 
     event.waitUntil(
         caches.keys().then(function (cacheNames) {
