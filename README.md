@@ -9,3 +9,4 @@
 - [ ] Improve navigation with keyboard
 - [ ] Bug: when navigate with keyboard and click un edit button, the input get focus and disappear
 - [x] Make PWA
+- [x] Highlight item that already exists
