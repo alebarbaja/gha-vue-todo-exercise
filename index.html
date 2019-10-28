@@ -24,29 +24,29 @@
         <header class="text-center">
             <h1 class="text-5xl font-black">To do list on Vue.js</h1>
             <p class="text-xl font-semibold mb-8">You have {{ items.length }} tasks.</p>
-            <button id="butInstall" aria-label="Install" hidden></button>
         </header>
+        <button id="butInstall" aria-label="Install" hidden></button>
 
         <main class="mt-3">
             <label for="">
-                <input id="add_item" type="text" placeholder="Add task"
-                    class="bg-gray-200 focus:bg-white border-black border-solid border-2 px-2 py-1 w-full mb-4"
+                <input id="add_item" type="text" placeholder="Add task" autofocus
+                    class="bg-gray-200 focus:bg-white border-black border-solid border-2 px-2 py-1 w-full mb-4 hover:bg-white"
                     @keyup.enter="addItem" />
             </label>
             <!-- <button @click="addItem" type="submit">+</button> -->
 
             <ul class="max-w-xs">
                 <li v-for="(item, index) in items" class="my-4 flex items-center justify-end">
-                    <span v-if="! item.edit" class="px-2 py-1 mr-2 w-40 border-transparent border-solid border-2"
+                    <span v-if="! item.edit" class="px-2 py-1 mr-2 w-40 border-transparent border-solid border-2 hover:border-black"
                         @click="enableEdit(index)">{{ item.title }}</span>
                     <input v-else type="text" v-model="item.title" :ref="'task'" @keyup.enter="disableEdit(index)"
                         @blur="disableEdit(index)"
                         class="px-2 py-1 mr-2 w-40 border-black border-transparent focus:border-black border-solid border-2 focus:bg-white">
                     <button
-                        class="border-black border-solid border-2 bg-orange-400 hover:bg-black hover:text-orange-400 px-2 py-1 mr-2"
+                        class="border-black border-solid border-2 bg-orange-400 hover:bg-black hover:text-orange-400 focus:bg-black focus:text-orange-400 px-2 py-1 mr-2"
                         @click="removeItem(index)">Delete</button>
                     <button
-                        class="border-black border-solid border-2 bg-orange-400 hover:bg-black hover:text-orange-400 px-2 py-1"
+                        class="border-black border-solid border-2 bg-blue-400 hover:bg-black hover:text-blue-400 focus:bg-black focus:text-blue-400 px-2 py-1"
                         @click="enableEdit(index)">Edit</button>
                 </li>
             </ul>

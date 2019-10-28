@@ -29,7 +29,11 @@ new Vue({
             }
 
             if (this.itemExist(value) === true) {
+                let repeated = [].filter.call( document.getElementsByTagName("span"), function( span ) {
+                    return span.textContent === value;
+                });
                 this.isError = true;
+                repeated[0].classList.add('bg-orange-300');
                 return false;
             }
 
@@ -39,6 +43,11 @@ new Vue({
                 title: value,
                 edit: false
             });
+            
+            let repeatedClasses = document.querySelectorAll('.bg-orange-300');
+            for ( let repeatedClass of repeatedClasses ) {
+                repeatedClass.classList.remove('bg-orange-300');
+            }
         },
         removeItem: function (index) {
             this.items.splice(index, 1);
