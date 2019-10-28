@@ -51,6 +51,7 @@ new Vue({
         },
         removeItem: function (index) {
             this.items.splice(index, 1);
+            this.$refs.addtask.focus();
         },
         enableEdit: function (index) {
             this.items[index].edit = true;
