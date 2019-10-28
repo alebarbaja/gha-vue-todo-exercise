@@ -1,8 +1,10 @@
-var CACHE_NAME = 'vue-todo-v5';
+var CACHE_NAME = 'vue-todo-v6';
 var urlsToCache = [
     'index.html',
     'css/style.css',
     'js/main.js',
+    'https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css',
+    'https://cdn.jsdelivr.net/npm/vue@2.6.0'
 ];
 
 self.addEventListener('install', function (event) {
@@ -45,7 +47,7 @@ self.addEventListener('fetch', function (event) {
 });
 
 self.addEventListener('activate', function (event) {
-    var cacheWhiteList = ['vue-todo-v5'];
+    var cacheWhiteList = ['vue-todo-v6'];
 
     event.waitUntil(
         caches.keys().then(function (cacheNames) {
