@@ -1,12 +1,14 @@
-# Vue To-Do - Excercise
+# To Do PWA
 
-### TO DO:
+The typical To Do application.
 
-- [x] Edit each item ( [this example can be adapted](https://jsfiddle.net/mnahara/ypmmkapn/) ) (thanks [Paco](https://github.com/pacosegovia)!)
-- [x] Bug: when an item is deleted, the next item is marked as editable
-- [x] Related to previous Bug: input don't receive focus when is editable
-- [ ] Add button to input add task
-- [ ] Improve navigation with keyboard
-- [ ] Bug: when navigate with keyboard and click un edit button, the input get focus and disappear
-- [x] Make PWA
-- [x] Highlight item that already exists
+I created this project to practice using Vue.js and TailwindCSS.
+I also wanted to create a Progressive Web App that I can use on my devices.
+
+---
+🛠️ Tech Stack: Vue.js 2.6.0, TailwindCSS 1.0, Service workers.
+
+I used the pre-built versions of Vue.js and Tailwind CSS in this project, rather than configuring and installing them from scratch.
+
+---
+🌐 Demo: https://alejandronarvaja.com/gha-vue-todo-exercise/
