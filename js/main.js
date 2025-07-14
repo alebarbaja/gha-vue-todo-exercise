@@ -22,7 +22,7 @@ new Vue({
     },
     methods: {
         addItem: function (e) {
-            value = e.target.value;
+            let value = e.target.value;
 
             if (value === "") {
                 return false;
@@ -30,10 +30,12 @@ new Vue({
 
             if (this.itemExist(value) === true) {
                 let repeated = [].filter.call( document.getElementsByTagName("span"), function( span ) {
-                    return span.textContent === value;
+                    return span.textContent.toLowerCase() === value.toLowerCase();
                 });
                 this.isError = true;
-                repeated[0].classList.add('bg-orange-300');
+                if (repeated.length > 0) {
+                    repeated[0].classList.add('bg-orange-300');
+                }
                 return false;
             }
 
@@ -64,12 +66,12 @@ new Vue({
             this.items[index].edit = false;
         },
         itemExist: function (value) {
+            let lowerValue = value.toLowerCase();
             for (var i = 0; i < this.items.length; i++) {
-                if (this.items[i].title === value) {
+                if (this.items[i].title.toLowerCase() === lowerValue) {
                     return true;
                 }
             }
-
             return false;
         }
     }
